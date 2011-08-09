@@ -1,7 +1,7 @@
 %define module	selenium
 %define name	python-%{module}
 %define version 2.3.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary:	Python bindings for Selenium
 Name:		%{name}
@@ -13,6 +13,7 @@ Group:		Development/Python
 Url:		http://pypi.python.org/pypi/selenium
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
+Requires:	python-rdflib >= 3.1.0
 BuildRequires:	python-setuptools
 
 %description
