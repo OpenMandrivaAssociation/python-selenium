@@ -1,6 +1,6 @@
 %define module	selenium
 %define name	python-%{module}
-%define version 2.9.0
+%define version 2.11.1
 %define release %mkrel 1
 
 Summary:	Python bindings for Selenium
