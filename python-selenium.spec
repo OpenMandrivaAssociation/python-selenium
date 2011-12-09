@@ -1,7 +1,7 @@
 %define module	selenium
 %define name	python-%{module}
 %define version 2.15.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary:	Python bindings for Selenium
 Name:		%{name}
@@ -12,9 +12,8 @@ License:	Apache License
 Group:		Development/Python
 Url:		http://pypi.python.org/pypi/selenium
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildArch:	noarch
 Requires:	python-rdflib >= 3.1.0
-BuildRequires:	python-setuptools
+BuildRequires:	python-devel, python-setuptools
 
 %description
 Selenium Python Client Driver is a Python language binding for
@@ -28,11 +27,21 @@ supported, as well as the Selenium 1.0 bindings.
 
 %install
 %__rm -rf %{buildroot}
-PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record=FILE_LIST
+PYTHONDONTWRITEBYTECODE= %__python setup.py install \
+        --root=%{buildroot} \
+		--install-lib=%{python_sitearch} \
+		--install-data=%{python_sitearch}
+
+%if "%{_lib}" == "lib64"
+rm -f %{buildroot}%py_platsitedir/selenium/webdriver/firefox/x86/x_ignore_nofocus.so
+%else
+rm -f %{buildroot}%py_platsitedir/selenium/webdriver/firefox/amd64/x_ignore_nofocus.so
+%endif
 
 %clean
 %__rm -rf %{buildroot}
 
-%files -f FILE_LIST
+%files 
 %defattr(-,root,root)
 %doc COPYING CREDITS.txt
+%py_platsitedir
