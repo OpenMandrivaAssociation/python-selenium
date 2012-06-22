@@ -1,7 +1,7 @@
 %define module	selenium
 %define name	python-%{module}
-%define version 2.15.0
-%define release %mkrel 2
+%define version 2.24.0
+%define release 1
 
 Summary:	Python bindings for Selenium
 Name:		%{name}
@@ -12,7 +12,7 @@ License:	Apache License
 Group:		Development/Python
 Url:		http://pypi.python.org/pypi/selenium
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires:	python-rdflib >= 3.1.0
+BuildArch:	noarch
 BuildRequires:	python-devel, python-setuptools
 
 %description
@@ -29,14 +29,14 @@ supported, as well as the Selenium 1.0 bindings.
 %__rm -rf %{buildroot}
 PYTHONDONTWRITEBYTECODE= %__python setup.py install \
         --root=%{buildroot} \
-		--install-lib=%{python_sitearch} \
-		--install-data=%{python_sitearch}
+	--install-lib=%{python_sitearch} \
+	--install-data=%{python_sitearch}
 
-%if "%{_lib}" == "lib64"
-rm -f %{buildroot}%py_platsitedir/selenium/webdriver/firefox/x86/x_ignore_nofocus.so
-%else
-rm -f %{buildroot}%py_platsitedir/selenium/webdriver/firefox/amd64/x_ignore_nofocus.so
-%endif
+# Fix for x86_64 described in 
+# http://code.google.com/p/selenium/issues/detail?id=2852
+pushd %{buildroot}%{py_platsitedir}/selenium/webdriver/firefox
+cp -f x86/x_ignore_nofocus.so amd64/x_ignore_nofocus.so
+popd
 
 %clean
 %__rm -rf %{buildroot}
