@@ -45,3 +45,72 @@ popd
 %defattr(-,root,root)
 %doc COPYING CREDITS.txt
 %py_platsitedir
+
+
+%changelog
+* Tue Jul 31 2012 Lev Givon <lev@mandriva.org> 2.25.0-1
++ Revision: 811502
+- Update to 2.25.0.
+
+* Fri Jun 22 2012 Lev Givon <lev@mandriva.org> 2.24.0-1
++ Revision: 806709
+- Update to 2.24.0.
+  Add fix for Firefox load problem on x86_64.
+
+* Fri Dec 09 2011 Lev Givon <lev@mandriva.org> 2.15.0-2
++ Revision: 739555
+- Shouldn't be noarch.
+
+* Fri Dec 09 2011 Lev Givon <lev@mandriva.org> 2.15.0-1
++ Revision: 739229
+- Update to 2.15.0.
+
+* Wed Nov 30 2011 Lev Givon <lev@mandriva.org> 2.14.0-1
++ Revision: 735508
+- Update to 2.14.0.
+
+* Tue Nov 15 2011 Lev Givon <lev@mandriva.org> 2.12.1-1
++ Revision: 730726
+- Update to 2.12.1.
+
+* Sun Oct 30 2011 Lev Givon <lev@mandriva.org> 2.11.1-1
++ Revision: 707860
+- Update to 2.11.1.
+
+* Tue Oct 25 2011 Lev Givon <lev@mandriva.org> 2.9.0-1
++ Revision: 707147
+- Update to 2.9.0.
+
+* Thu Oct 06 2011 Lev Givon <lev@mandriva.org> 2.8.1-1
++ Revision: 703356
+- Update to 2.8.1.
+
+* Mon Sep 26 2011 Lev Givon <lev@mandriva.org> 2.7.0-1
++ Revision: 701372
+- Update to 2.7.0.
+
+* Tue Sep 13 2011 Lev Givon <lev@mandriva.org> 2.6.0-1
++ Revision: 699688
+- Update to 2.6.0.
+
+* Sun Aug 28 2011 Lev Givon <lev@mandriva.org> 2.5.0-1
++ Revision: 697259
+- Update to 2.5.0.
+
+* Thu Aug 11 2011 Lev Givon <lev@mandriva.org> 2.4.0-1
++ Revision: 694042
+- Update to 2.4.0.
+
+* Wed Aug 10 2011 Lev Givon <lev@mandriva.org> 2.3.0-2
++ Revision: 693802
+- Require python-rdflib.
+
+* Tue Aug 02 2011 Lev Givon <lev@mandriva.org> 2.3.0-1
++ Revision: 692712
+- Update to 2.3.0.
+
+* Fri Jul 29 2011 Lev Givon <lev@mandriva.org> 2.2.0-1
++ Revision: 692159
+- import python-selenium
+
+
