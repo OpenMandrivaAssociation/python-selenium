@@ -39,7 +39,7 @@ popd
 %clean
 
 %files 
-%doc COPYING CREDITS.txt
+%doc  
 %py_platsitedir
 
 
