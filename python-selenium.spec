@@ -5,13 +5,12 @@
 
 Summary:	Python bindings for Selenium
 Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-Source0:	http://pypi.python.org/packages/source/s/%{module}/%{module}-%{version}.tar.gz
+Version:	2.35.0
+Release:	1
+Source0:	http://pypi.python.org/packages/source/s/selenium/selenium-%{version}.tar.gz
 License:	Apache License
 Group:		Development/Python
 Url:		http://pypi.python.org/pypi/selenium
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
 BuildRequires:	python-devel, python-setuptools
 
@@ -26,11 +25,10 @@ supported, as well as the Selenium 1.0 bindings.
 %setup -q -n %{module}-%{version}
 
 %install
-%__rm -rf %{buildroot}
 PYTHONDONTWRITEBYTECODE= %__python setup.py install \
         --root=%{buildroot} \
-	--install-lib=%{python_sitearch} \
-	--install-data=%{python_sitearch}
+	--install-lib=%{py_platsitedir} \
+	--install-data=%{py_platsitedir}
 
 # Fix for x86_64 described in 
 # http://code.google.com/p/selenium/issues/detail?id=2852
@@ -39,10 +37,8 @@ cp -f x86/x_ignore_nofocus.so amd64/x_ignore_nofocus.so
 popd
 
 %clean
-%__rm -rf %{buildroot}
 
 %files 
-%defattr(-,root,root)
 %doc COPYING CREDITS.txt
 %py_platsitedir
 
@@ -112,5 +108,6 @@ popd
 * Fri Jul 29 2011 Lev Givon <lev@mandriva.org> 2.2.0-1
 + Revision: 692159
 - import python-selenium
+
 
 

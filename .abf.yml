@@ -1,2 +1,4 @@
+removed_sources:
+  selenium-2.25.0.tar.gz: 9842e485936127b6fc8b927e076dc9f453832e1d
 sources:
-  "selenium-2.25.0.tar.gz": 9842e485936127b6fc8b927e076dc9f453832e1d
+  selenium-2.35.0.tar.gz: 35b00c378b4d3201a7335bb59d3c1e84809180f3
