@@ -2,8 +2,9 @@
 
 Summary:	Python bindings for Selenium
 
+
 Name:		python-%{module}
-Version:	2.41.0
+Version:	2.42.0
 Release:	1
 Source0:	http://pypi.python.org/packages/source/s/selenium/selenium-%{version}.tar.gz
 License:	Apache License
@@ -37,5 +38,6 @@ popd
 
 %files 
 %{py_platsitedir}/*
+
 
 
