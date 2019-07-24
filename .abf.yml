@@ -1,8 +1,2 @@
-removed_sources:
-  selenium-2.25.0.tar.gz: 9842e485936127b6fc8b927e076dc9f453832e1d
-  selenium-2.35.0.tar.gz: 35b00c378b4d3201a7335bb59d3c1e84809180f3
-  selenium-2.40.0.tar.gz: 0ef3fdd40a43d9d3a628e99465df426bbc018ae3
-  selenium-2.41.0.tar.gz: 10ca7ab41e7bd98f743c96a5d55596bd645e2345
-  selenium-2.42.0.tar.gz: cbb7640d730e5d8539b837444a466ebe0105022b
 sources:
-  selenium-2.42.1.tar.gz: 26b03e2e81c00067eb6939413ef6e44989ad4bca
+  selenium-3.141.0.tar.gz: 383f2c8d7b05a1083c65fec58580a5f2081d4482
