@@ -10,7 +10,7 @@ Release:	1
 Source0:	https://files.pythonhosted.org/packages/ed/9c/9030520bf6ff0b4c98988448a93c04fcbd5b13cd9520074d8ed53569ccfe/selenium-3.141.0.tar.gz
 License:	Apache License
 Group:		Development/Python
-Url:		http://pypi.python.org/pypi/selenium
+Url:		https://pypi.python.org/pypi/selenium
 BuildRequires:	python-devel, python-setuptools
 
 %description
