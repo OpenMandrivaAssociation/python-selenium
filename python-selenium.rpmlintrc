@@ -1,0 +1,3 @@
+# selenium's drivers require these duplicates
+addFilter("W: files-duplicate")
+addFilter("E: files-duplicated-waste")

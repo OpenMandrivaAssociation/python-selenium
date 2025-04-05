@@ -1,2 +1,3 @@
 sources:
-  selenium-3.141.0.tar.gz: 383f2c8d7b05a1083c65fec58580a5f2081d4482
+  selenium-4.31.0.tar.gz: 15f13071a0a8a4cc47dadff4662af42a5c5daa52
+  selenium-4.31.0-vendor.tar.xz: 8635e322d4b26be7180ad3bd2e8e7db46acd4dc6
