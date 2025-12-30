@@ -9,7 +9,7 @@
 
 Name:		python-selenium
 Version:	4.31.0
-Release:	2
+Release:	3
 Summary:	Python language bindings for Selenium WebDriver
 License:	Apache-2.0
 Group:		Development/Python
