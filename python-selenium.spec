@@ -8,8 +8,8 @@
 # NOTE	Source1 & yml.
 
 Name:		python-selenium
-Version:	4.31.0
-Release:	3
+Version:	4.41.0
+Release:	1
 Summary:	Python language bindings for Selenium WebDriver
 License:	Apache-2.0
 Group:		Development/Python
@@ -58,23 +58,10 @@ replace-with = "vendored-sources"
 
 [source.vendored-sources]
 directory = "vendor"
-
 EOF
 
-%build
-%py_build
-
-%install
-%py3_install
-
 %files
-%{_bindir}/%{module}.webdriver.common.%{module}-manager
 %{python3_sitearch}/%{module}
 %{python3_sitearch}/%{module}-%{version}.dist-info
 %license LICENSE
 %doc README.rst
-
-
-
-
-
