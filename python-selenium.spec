@@ -8,16 +8,16 @@
 # NOTE	Source1 & yml.
 
 Name:		python-selenium
-Version:	4.41.0
+Version:	4.44.0
 Release:	1
 Summary:	Python language bindings for Selenium WebDriver
 License:	Apache-2.0
 Group:		Development/Python
-URL:		https://pypi.org/project/selenium/
+URL:		https://pypi.org/project/selenium
 Source0:	https://files.pythonhosted.org/packages/source/s/selenium/%{oname}-%{version}.tar.gz
 Source1:	%{oname}-%{version}-vendor.tar.xz
-BuildSystem: python
 
+BuildSystem: python
 BuildRequires:	python
 BuildRequires:  pkgconfig(python3)
 BuildRequires:	python%{pyver}dist(certifi)
@@ -48,8 +48,10 @@ Python language bindings for Selenium WebDriver.
 
 The selenium package is used to automate web browser interaction from Python.
 
-%prep
-%autosetup -n %{oname}-%{version} -p1 -a1
+%prep -a
+# Extract vendored crates
+tar xf %{S:1}
+# Prep vendored crates dir
 %cargo_prep -v vendor
 
 cat >>.cargo/config <<EOF
@@ -60,8 +62,15 @@ replace-with = "vendored-sources"
 directory = "vendor"
 EOF
 
+%build -p
+export CARGO_HOME=$PWD/.cargo
+%build -a
+# sort out crate licenses
+%cargo_license_summary
+%{cargo_license} > LICENSES.dependencies
+
 %files
-%{python3_sitearch}/%{module}
-%{python3_sitearch}/%{module}-%{version}.dist-info
-%license LICENSE
 %doc README.rst
+%license LICENSE LICENSES.dependencies
+%{python_sitearch}/%{module}
+%{python_sitearch}/%{module}-%{version}.dist-info
